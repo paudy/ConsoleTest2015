@@ -27,6 +27,15 @@
     <ClInclude Include="iSms.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="acctest.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="person.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtoBufTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -38,5 +47,22 @@
     <ClCompile Include="iSms.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="acctest.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="person.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtoBufTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="acctest.proto">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="person.proto">
+      <Filter>头文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

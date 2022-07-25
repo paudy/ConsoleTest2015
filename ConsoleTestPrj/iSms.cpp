@@ -6,6 +6,7 @@
 #include <winsock2.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctime>
 #include "isms.h"
 
 #pragma comment(lib , "ws2_32.lib")
@@ -272,7 +273,7 @@ int	CSmsVerifyCode::MakeSmsCode(const char *szMobile)
 int	CSmsVerifyCode::SendSmsCode(tagSmsCode *pSmsCode)			
 {
 	char szCode[20]={0};
-	itoa(pSmsCode->nRandCode, szCode, 10);
+	_itoa(pSmsCode->nRandCode, szCode, 10);
 	//http_post(szCode);
 
 	return 0;
@@ -286,7 +287,7 @@ int	CSmsVerifyCode::VerifySmsCode(const char *szVerifyCode, const char *szMobile
 	itr = m_SmsCodeList.find(nCode);
 	if(itr != m_SmsCodeList.end())
 	{
-		if(strnicmp(szMobile, itr->second->szMobileID, sizeof(itr->second->szMobileID)) == 0)
+		if(_strnicmp(szMobile, itr->second->szMobileID, sizeof(itr->second->szMobileID)) == 0)
 		{
 			time_t tNow = time(NULL);
 			if((tNow - itr->second->tmValidate) < 300)

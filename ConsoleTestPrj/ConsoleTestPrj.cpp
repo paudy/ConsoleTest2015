@@ -3,7 +3,28 @@
 
 #include "stdafx.h"
 #include <atlconv.h>
+#include "ProtoBufTest.h"
 
+
+///functions declare
+static void zdTest1();
+
+
+///主入口函数main 
+int main()
+{
+	testProtoBuf();
+
+	person_serialize();
+	person_unSerialize();
+
+	//zdTest1();
+
+	system("pause");
+	return 0;
+}
+
+///测试函数
 static void zdTest1()
 {
 	USES_CONVERSION;
@@ -13,16 +34,13 @@ static void zdTest1()
 		szWstr[i] = L'A';
 	}
 	char *pstr = W2A(szWstr);
+
 	int n = strlen(pstr);
 	char sztmp[100] = { 0 };
 	sprintf_s(sztmp, "%d", n);
 
+	printf_s("WStrLen=%s\n", sztmp);
+
 }
 
-
-int main()
-{
-	zdTest1();
-    return 0;
-}
 

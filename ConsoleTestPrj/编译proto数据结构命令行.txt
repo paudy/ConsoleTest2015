@@ -1,0 +1,5 @@
+//编译proto消息
+protoc.exe --cpp_out=./ acctest.proto
+
+//生成的acctest.pb.h头文件，在VC++编译环境，需要添加如下宏定义
+#define PROTOBUF_USE_DLLS  //本行手动添加，解决连接时的无法解析的外部符号的错误,by zdleeek
